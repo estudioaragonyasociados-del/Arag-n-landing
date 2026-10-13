@@ -37,3 +37,8 @@ h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;line-height:1.1}
 .andy{position:relative;display:inline-block;line-height:0;overflow:hidden;filter:drop-shadow(0 0 6px rgba(214,177,92,.4))}
 .andy::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,252,230,1) 50%,transparent 70%);-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat;transform:translateX(-130%);animation:shine 3.2s var(--e) .8s infinite}
 @keyframes shine{0%{transform:translateX(-130%)}55%,100%{transform:translateX(130%)}}
+/* Botones: brillo periódico y respuesta al toque (para pantallas táctiles) */
+.btn,.btn-wa,.btn-o{position:relative;overflow:hidden;isolation:isolate}
+.btn::after,.btn-wa::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.55) 50%,transparent 65%);transform:translateX(-120%);animation:btnshine 4.5s var(--e) 1.2s infinite}
+@keyframes btnshine{0%{transform:translateX(-120%)}30%,100%{transform:translateX(120%)}}
+.btn:active,.btn-wa:active,.btn-o:active{transform:scale(.96)}
