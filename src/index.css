@@ -1,6 +1,6 @@
 @tailwind base;@tailwind components;@tailwind utilities;
 :root{--e:cubic-bezier(.22,1,.36,1)}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
+html{scroll-behavior:smooth;scroll-padding-top:96px;overflow-x:hidden}
 body{font-family:Inter,system-ui,sans-serif;color:#2A1650;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;line-height:1.1}
 .g-hero{background:linear-gradient(135deg,#F6EEFC,#E3D0F5)}
@@ -27,13 +27,15 @@ h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;line-height:1.1}
 .a-sl{animation:sl .6s var(--e) both;animation-delay:var(--d,0ms)}
 .a-pop{animation:pop .5s var(--e) both,halo 6s 1s infinite}
 .glow{animation:br 8s ease-in-out infinite}
-.js .rv{opacity:0;transform:translateY(28px);transition:opacity .7s var(--e),transform .7s var(--e);transition-delay:var(--d,0ms)}
+.js .rv{opacity:0;transform:translateY(40px);transition:opacity .8s var(--e),transform .8s var(--e);transition-delay:var(--d,0ms)}
+.js .rv-l{transform:translateX(-36px)}.js .rv-r{transform:translateX(36px)}.js .rv-z{transform:scale(.92) translateY(24px)}
 .js .rv.in{opacity:1;transform:none}
 .js .ln{transform:scaleX(0);transform-origin:left;transition:transform 1.2s var(--e)}
 .js .ln.in{transform:none}
+.px{transform:translate3d(0,calc(var(--sy,0)*-.06px),0);will-change:transform}
 .faq{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--e)}
 .faq.open{grid-template-rows:1fr}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.js .rv,.js .ln{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.js .rv{transform:none!important;transition:opacity .8s var(--e)!important}.js .ln,.px{transform:none!important}}
 .andy{position:relative;display:inline-block;line-height:0;overflow:hidden;filter:drop-shadow(0 0 6px rgba(214,177,92,.4))}
 .andy::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,252,230,1) 50%,transparent 70%);-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat;transform:translateX(-130%);animation:shine 3.2s var(--e) .8s infinite}
 @keyframes shine{0%{transform:translateX(-130%)}55%,100%{transform:translateX(130%)}}
